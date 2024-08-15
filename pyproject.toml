@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "vm-lcsampler"
+version = "0.1.0"
+description = ""
+authors = ["versmc"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.2.13"
+langchain-core = "^0.2.30"
+langchain-openai = "^0.1.21"
+ruff = "^0.5.7"
+mypy = "^1.11.1"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
+
+
+[tool.ruff]
+line-length = 88
+
