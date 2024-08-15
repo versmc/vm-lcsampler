@@ -1,7 +1,7 @@
 # vm-lcsampler: LLM Sampler with LangChain chat models.
 
 ## Overview
-This repository provides tools for sampling text and structured data using Large Language Models (LLMs) through [LangChain](https://python.langchain.com/v0.2/docs/introduction/).
+This repository provides tools for sampling text and structured data using Large Language Models (LLMs) by prompt engineering on [LangChain](https://python.langchain.com/v0.2/docs/introduction/).
 
 
 ## Install
