@@ -17,14 +17,17 @@ from vm_lcsampler.chatmodel_samplers import (
     ChatModelChunkedTextEnumerator,
 )
 
+# set sampler with ChatOpenAI
 sampler = ChatModelChunkedTextEnumerator(
     llm = ChatOpenAI(
         api_key=str(dotenv_values()["OPENAI_API_KEY"]),
         temperature=0.7,
     )
 )
+
+# create enumerator that samples cat breeds by 5 [size] x 4 [chunks]
 enumerator = sampler.enumerate(
-    category_name="Cat breeds",
+    category_name="cat breeds",
     category_description=None,
     chunk_size=5,
     num_chunk=4,
@@ -39,23 +42,28 @@ enumerator = sampler.enumerate(
     ],
 )
 
+# sample
 for i, text in enumerator:
     print(text)
 ```
 
 ### structured object sampling
 ```python
+
+# define structure for sampling
 class Joke(BaseModel):
     setup: str = Field(description="The setup of the joke")
     punchline: str = Field(description="The punchline to the joke")
 
-
+# set LLM to sampler
 sampler = ChatModelStructureSampler(
     llm = ChatOpenAI(
         api_key=str(dotenv_values()["OPENAI_API_KEY"]),
         temperature=0.7,
     )
 )
+
+# define settings for sampling
 generator = sampler.generate(
     model_name="joke",
     model_description=None,
@@ -77,6 +85,7 @@ generator = sampler.generate(
     num_sample=5,
 )
 
+# sample
 for joke in generator:
     print(joke.json(ensure_ascii=False, indent=4))
 
