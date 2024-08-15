@@ -4,7 +4,14 @@
 Sampling with LLM through [LangChain](https://python.langchain.com/v0.2/docs/introduction/) chat models.
 
 
+## install
+This repository is managed by [poetry](https://python-poetry.org/). You can install with the following command.
+```sh
+pip install -e .
+```
+
 ## Examples
+In the following examples, OpenAI API key must be set in `.env` file according to `./.env.org`.
 
 ### text sampling
 ```python
