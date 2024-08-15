@@ -4,7 +4,7 @@
 Sampling with LLM through [LangChain](https://python.langchain.com/v0.2/docs/introduction/) chat models.
 
 
-## install
+## Install
 This repository is managed by [poetry](https://python-poetry.org/). You can install with the following command.
 ```sh
 pip install -e .
@@ -13,7 +13,7 @@ pip install -e .
 ## Examples
 In the following examples, OpenAI API key must be set in `.env` file according to `./.env.org`.
 
-### text sampling
+### Text sampling
 ```python
 from dotenv import dotenv_values
 from langchain_core.pydantic_v1 import BaseModel, Field
@@ -54,9 +54,8 @@ for i, text in enumerator:
     print(text)
 ```
 
-### structured object sampling
+### Structured object sampling
 ```python
-
 # define structure for sampling
 class Joke(BaseModel):
     setup: str = Field(description="The setup of the joke")
@@ -99,6 +98,6 @@ for joke in generator:
 ```
 
 
-### more
+### More
 
 See [./examples/01_chatmodel_samplers.py](./examples/01_chatmodel_samplers.py) for full examples.
